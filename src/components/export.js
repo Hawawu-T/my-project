@@ -11,9 +11,9 @@ import client4 from "../assets/images/images/client4.png";
 import client5 from "../assets/images/images/client5.png";
 import client6 from "../assets/images/images/client6.png";
 import { MdNoteAlt } from "react-icons/md";
-import { FaHome, FaSearch, FaNotesMedical, FaCameraRetro } from "react-icons/fa";
+import { FaHome, FaSearch, FaNotesMedical, FaCameraRetro, FaMoon, FaSun, FaHeart, FaMoneyBill, FaUser } from "react-icons/fa";
 import { GoLaw } from "react-icons/go";
-
+import { FaHouseChimney, FaPerson } from "react-icons/fa6";
 export const property = [
   {
     images: prop1,
@@ -166,3 +166,45 @@ export const agent = [
       "The WP Estate team did an outstanding job helping me buy my first home. The high level of service and dedication",
   },
 ];
+
+export const navItem = [
+  {
+    link: 'Home', path:'home'
+  },
+  
+  {
+    link: 'About', path:'about'
+  },
+  {
+    link: 'Properties', path:'propeties'
+  },
+  {
+    link: 'Services', path:'services'
+  },
+  {
+    link: 'Agents', path:'agents'
+  },
+  {
+    link: 'Contact', path:'contact'
+  }
+]
+
+export const dashItem = [
+  {
+    link: 'Profile', path:'/profile',icon:FaUser
+  },
+  {
+    link: 'My Properties', path:'/prop',icon:FaHouseChimney
+  },
+  
+  {
+    link: 'Favorite', path:'/fav',icon:FaHeart
+  },
+  {
+    link: 'Purchase History', path:'/purchase',icon:FaMoneyBill
+  },
+  
+  {
+    link: 'My Agents', path:'/my_agents',icon:FaPerson
+  },
+]
