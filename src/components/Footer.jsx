@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDarkMode} from '../components/DarkModeContext'
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaBuilding, FaMobile, FaFax, FaArrowUp, FaMoon, FaSun } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaBuilding, FaMobile, FaFax, FaArrowUp } from 'react-icons/fa'
 import { Link } from 'react-scroll'
 import { IoMdMail } from 'react-icons/io'
 import prop7 from '../assets/images/images/prop7.jpg'
@@ -8,11 +8,11 @@ import prop8 from '../assets/images/images/prop8.jpg'
 import 'aos/dist/aos.css'
 
 const Footer = () => {
-  
   const { darkMode, toggleDarkMode } = useDarkMode();
 
+  
   return (
-    <>
+    <div>
     <footer className={`${darkMode ? 'dark bg-black' : 'light bg-gray-800'} w-full m-auto lg:px-20 px-10 py-20 grid lg:grid-cols-3 grid-cols-1 justify-center`}>
       <div className='flex flex-col justify-center items-start gap-5'>
         <h1 className='text-white text-2xl font-semibold'>About Us</h1>
@@ -82,13 +82,7 @@ const Footer = () => {
       <FaArrowUp className='size-6 text-white'/>
       </Link>
     </div>
-
-    <div>
-      <button onClick={toggleDarkMode} className='flex items-start p-4 rounded-full bg-orange-500 fixed lg:top-32 right-6 top-6'>
-        {darkMode ? <FaMoon size={25} className='text-black'/>: <FaSun size={25} className='text-black' />}
-      </button>
-    </div>  
-    </>
+    </div>
   )
 }
 

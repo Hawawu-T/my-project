@@ -1,32 +1,24 @@
 import React from 'react'
-import { DarkModeProvider }  from './components/DarkModeContext'
+
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+
+import Home from "./pages/Home"
 import Header from './components/Header'
-import Hero from './sections/Hero'
-import About from './sections/About'
-import Agents from './sections/Agents'
-import Popular from './sections/PopularAreas'
-import Properties from './sections/Properties'
-import Services from './sections/Services'
-import Contact from './sections/Contact'
-import Footer from './components/Footer'
+import Footer from "./components/Footer"
+import UserDashboard from './pages/UserDashboard'
+import { DarkModeProvider } from './components/DarkModeContext'
+
 // import SignUp from './sections/signup'
+
 
 const App = () => {
   return (
-    <>
-    <DarkModeProvider>
-      <Header />
-      <Hero />
-      {/* <SignUp /> */}
-      <About />
-      <Popular />
-      <Properties />
-      <Services />
-      <Agents />
-      <Contact />
-      <Footer />
-    </DarkModeProvider>
-    </>
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/dash" element={<UserDashboard/>}/>
+      </Routes> 
+    </BrowserRouter>
   )
 }
 
