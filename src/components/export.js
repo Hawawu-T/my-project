@@ -191,20 +191,40 @@ export const navItem = [
 
 export const dashItem = [
   {
-    link: 'Profile', path:'/profile',icon:FaUser
+    link: 'Profile', path:'profile',icon:FaUser
   },
   {
-    link: 'My Properties', path:'/prop',icon:FaHouseChimney
-  },
-  
-  {
-    link: 'Favorite', path:'/fav',icon:FaHeart
-  },
-  {
-    link: 'Purchase History', path:'/purchase',icon:FaMoneyBill
+    link: 'My Properties', path:'prop',icon:FaHouseChimney
   },
   
   {
-    link: 'My Agents', path:'/my_agents',icon:FaPerson
+    link: 'Favorite', path:'fav',icon:FaHeart
+  },
+  {
+    link: 'Purchase History', path:'purchase',icon:FaMoneyBill
+  },
+  
+  {
+    link: 'My Agents', path:'myagent',icon:FaPerson
+  },
+]
+
+export const profItem = [
+  {
+    edit:"Full Name",type:"text"
+  },
+  {
+  edit:"Date of Birth", type:"date"
+  },
+  
+  {
+   edit:"Country/Region", type:"text"
+  },
+  {
+    edit:"Adress", type:"text"
+  },
+  
+  {
+    edit: 'Password',type:"password"
   },
 ]

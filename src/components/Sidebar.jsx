@@ -1,48 +1,31 @@
-import { useState } from "react";
-import client1 from "../assets/images/images/client1.png";
-import { DarkModeProvider, useDarkMode } from "./DarkModeContext";
-import { dashItem } from "./export";
+import React, { useState } from 'react';
 
 const Sidebar = () => {
-    const { darkMode, toggleDarkMode } = useDarkMode();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  }
-  const closedMenu = () => {
-    setIsMenuOpen(false);
-  }
-
-    return (
-        
-            <div className={`${darkMode ? 'dark bg-black' : 'light bg-slate-300 fixed  p-4 top-0 left-0 h-screen w-64 shadow-md' } `}>
-          <div className="flex  items-center justify-center">
-            <img src={client1} width={100} />
-          </div>
-          <ul className="list-none my-7">
-           {
-            dashItem.map((item,index)=>(
-                <li className="py-2 hover:border-b hover:shadow-sm my-10  cursor-pointer">
-            <div className="flex items-center justify-between ">
-            <a href={item.path} key={index} className="text-red-500 dark:bg-white">
-                {item.link}
-              </a>
-              
-                <item.icon className= "size-4 text-red-500 dark:bg-white"  />
-
-            </div>
-            </li>     
-            ))
-           }
-          </ul>
-          {/* <div className="bg-white p-4 rounded shadow-md">
-          <h3 className="text-lg font-bold mb-2">My Agent</h3>
-          <p className="text-gray-600">John Doe</p>
-          <p className="text-gray-600">johndoe@example.com</p>
-        </div> */}
-      </div>
+  return (
+    <div>
+      <button
+        className="lg:hidden"
+        onClick={() => setShowSidebar(!showSidebar)}
+      >
+        Toggle Sidebar
+      </button>
+      <div
+        className={`lg:w-1/3 xl:w-1/4 p-4 bg-gray-100 h-screen fixed top-0 left-0 lg:relative lg:top-auto lg:left-auto transition duration-300 ease-in-out ${
+          showSidebar ? "block" : "hidden"
+        }`}
+      >
+        {/* Sidebar content here */}
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+        </div>
+    </div>
   );
-};
+}
 
 export default Sidebar;
+
