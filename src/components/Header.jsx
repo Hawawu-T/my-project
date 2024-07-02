@@ -3,10 +3,11 @@ import { Link, Route, Routes } from "react-router-dom";
 import { useDarkMode} from '../components/DarkModeContext'
 import { FaMoon, FaSun } from "react-icons/fa";
 import { navItem } from "./export";
+import Toggle from "./Toggle";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { darkMode, toggleDarkMode } = useDarkMode();
+   const { darkMode, toggleDarkMode } = useDarkMode();
   return (
     <div className={`${darkMode ?'dark ' :'bg-white'}`}>
 <nav className="fixed top-0 left-0 dark:bg-black right-0 p-4 dark:text-white bg-white z-50">
@@ -59,9 +60,7 @@ const Header = () => {
   ))
 }
         </ul>
-        <button onClick={toggleDarkMode} className='flex  w-11 h-11 p-3 mr-15 rounded-full bg-orange-500 right-full  sm:left-8'>
-        {darkMode ? <FaMoon size={20} className='text-black'/>: <FaSun size={20} className='text-black' />}
-      </button>
+        <Toggle/>
       </div>
     </nav>
   </div>

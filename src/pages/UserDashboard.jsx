@@ -7,8 +7,8 @@ import { dashItem } from '../components/export'
 
 const UserDashboard = () => {
   return (
-   <DarkModeProvider>
-<div className='flex  gap-10'>
+   
+<div className='w-full my-12 flex gap-4'>
       <Sidebar />  
        <Routes>
         {dashItem.map((route,index) => (
@@ -16,8 +16,6 @@ const UserDashboard = () => {
         ))}
       </Routes> 
     </div>
-
-   </DarkModeProvider>
   )
 }
 

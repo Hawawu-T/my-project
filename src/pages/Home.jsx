@@ -10,10 +10,11 @@ import Services from '../sections/Services'
 import Contact from '../sections/Contact'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Toggle from '../components/Toggle'
 const Home = () => {
   return (
-    <DarkModeProvider>
-    <Header/>
+    
+   <div> 
     <Hero />
 {/* <SignUp /> */}
     <About />
@@ -22,8 +23,8 @@ const Home = () => {
     <Services />
     <Agents />
     <Contact />
-    <Footer/> 
-    </DarkModeProvider> 
+   </div>
+  
   )
   
 }
