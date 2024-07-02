@@ -179,7 +179,6 @@ export const navItem = [
   // {
   //   link: 'Home', path:'/',component:Home
   // },
-  
   {
     link: 'About', path:'about',component:AboutUs
   },

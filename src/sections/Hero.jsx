@@ -3,6 +3,7 @@ import { useDarkMode} from '../components/DarkModeContext'
 import heroimg from '../assets/images/images/hero1.webp'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
 const Hero = () => {
 
@@ -72,6 +73,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
+   
     </>
   )
 }
