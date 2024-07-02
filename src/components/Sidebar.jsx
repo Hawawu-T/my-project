@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDarkMode} from '../components/DarkModeContext'
 import {dashItem} from "./export.js"
-import { FaUser } from "react-icons/fa";
-
 const Sidebar = () => {
   const [showside, setShowside] = useState(false);
   const { darkMode, toggleDarkMode } = useDarkMode();

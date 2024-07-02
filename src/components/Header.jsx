@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { useDarkMode} from '../components/DarkModeContext'
-import { FaMoon, FaSun } from "react-icons/fa";
 import { navItem } from "./export";
 import Toggle from "./Toggle";
 

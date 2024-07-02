@@ -1,7 +1,6 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
-import {Route,Routes,useNavigate} from "react-router-dom"
-import { DarkModeProvider } from '../components/DarkModeContext'
+import {Route,Routes,} from "react-router-dom"
 import { dashItem } from '../components/export'
 
 
