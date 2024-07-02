@@ -19,9 +19,9 @@ import Wishlist from "../dashpages/Wishlist";
 import Profile from "../dashpages/Profile";
 import AboutUs from "../container/AboutUs";
 import Home from "../pages/Home";
-import ContactUs from "../container/ContactUs";
 import BAA from "../container/BAA";
 import Login from "../container/Login";
+import ContactUs from "../container/ContactUs";
 export const property = [
   {
     images: prop1,
@@ -176,9 +176,9 @@ export const agent = [
 ];
 
 export const navItem = [
-  {
-    link: 'Home', path:'/',component:Home
-  },
+  // {
+  //   link: 'Home', path:'/',component:Home
+  // },
   
   {
     link: 'About', path:'about',component:AboutUs

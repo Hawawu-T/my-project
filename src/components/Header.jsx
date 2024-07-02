@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { useDarkMode} from '../components/DarkModeContext'
 import { FaMoon, FaSun } from "react-icons/fa";
 import { navItem } from "./export";
@@ -41,7 +41,7 @@ const Header = () => {
               {
   navItem.map((nav,index)=>(
     <li key={index}>
-            <Link to={nav.path} className="block py-2 px-4 text-sm hover:bg-gray-700 rounded">{nav.link}</Link>
+            <Link to={nav.path} className="block py-2 uppercase px-4 text-sm hover:bg-gray-700 rounded">{nav.link}</Link>
           </li>
   ))
 }
@@ -54,7 +54,7 @@ const Header = () => {
 {
   navItem.map((nav,index)=>(
     <li key={index}>
-            <Link to={nav.path} className="hover:text-black">{nav.link}</Link>
+            <Link to={nav.path} className="hover:text-black uppercase">{nav.link}</Link>
           </li>
   ))
 }
