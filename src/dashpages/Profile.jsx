@@ -13,7 +13,7 @@ const Profile = () => {
    
   {
     profItem.map((text,index)=>(
-      <div className='flex flex-row items-center gap-3'>
+      <div key={index} className='flex flex-row items-center gap-3'>
       <input  type={text.type}  className=' w-96 p-2 border-b' placeholder={text.edit}/>
       <FaEdit className=' rounded-full shadow-md shadow-red-500'/>
       </div>

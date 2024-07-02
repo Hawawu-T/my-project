@@ -1,12 +1,22 @@
 import React from 'react'
 import { property } from '../components/export';
 import { useDarkMode } from '../components/DarkModeContext';
+import { FaArrowLeft } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const Wishlist = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
+  const handleClick=()=>{
+    <Link to={"/"}/>
+  }
   return (
     <div className={`${darkMode ?'dark bg-black' :'bg-white'}`}>
     <div className=" mx-auto p-4 pt-6 md:p-6 lg:p-12">
+    <Link to="/">
+          <button className="flex items-center font-sans text-3xl font-bold">
+            <FaArrowLeft size={24}/>
+          </button>
+        </Link>
       <h1 className="text-3xl font-bold text-center mb-4">Wishlist</h1>
       <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {property.map((property,index) => (

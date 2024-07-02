@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDarkMode} from '../components/DarkModeContext'
 import { FaMoon, FaSun } from "react-icons/fa";
+import { navItem } from "./export";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,89 +38,26 @@ const Header = () => {
           {isOpen && (
             <div className="absolute top-full left-0 w-full bg-white dark:bg-black dark:text-white mt-1 p-2">
               <ul className="flex flex-col space-y-2">
-                <li>
-                  <Link
-                    to="/"
-                    className="block py-2 px-4 text-sm hover:bg-gray-900 rounded"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    className="block py-2 px-4 text-sm hover:bg-gray-900 rounded"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="block py-2 px-4 text-sm hover:bg-gray-700 rounded"
-                  >
-                    Contact us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/bookanappointment"
-                    className="hover:text-gray-400"
-                  >
-                    Book an appointment
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/loginScreen"
-                    className="block py-2 px-4 text-sm hover:bg-gray-700 rounded"
-                  >
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/signup"
-                    className="block py-2 px-4 text-sm hover:bg-gray-700 rounded"
-                  >
-                    Sign up
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/agent"
-                    className="block py-2 px-4 text-sm hover:bg-gray-700 rounded"
-                  >
-                    Agent
-                  </Link>
-                </li>
+              {
+  navItem.map((nav,index)=>(
+    <li key={index}>
+            <Link to={nav.path} className="block py-2 px-4 text-sm hover:bg-gray-700 rounded">{nav.link}</Link>
+          </li>
+  ))
+}
               </ul>
             </div>
           )}
         </div>
         
         <ul className="hidden lg:flex space-x-4">
-          <li>
-            <Link to="/" className="hover:text-white">Home</Link>
+{
+  navItem.map((nav,index)=>(
+    <li key={index}>
+            <Link to={nav.path} className="hover:text-black">{nav.link}</Link>
           </li>
-          <li>
-            <Link to="/about" className="hover:text-white">About</Link>
-          </li>
-          <li>
-            <Link to="/contact" className="hover:text-white">Contact us</Link>
-          </li>
-          <li>
-            <Link to="/bookanappointment" className="hover:text-white">Book an appointment</Link>
-          </li>
-          <li>
-            <Link to="/loginScreen" className="hover:text-white">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup" className="hover:text-white">Sign up</Link>
-          </li>
-          <li>
-            <Link to="/agent" className="hover:text-white">Agent</Link>
-          </li>
+  ))
+}
         </ul>
         <button onClick={toggleDarkMode} className='flex  w-11 h-11 p-3 mr-15 rounded-full bg-orange-500 right-full  sm:left-8'>
         {darkMode ? <FaMoon size={20} className='text-black'/>: <FaSun size={20} className='text-black' />}

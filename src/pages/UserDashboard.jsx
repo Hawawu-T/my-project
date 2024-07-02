@@ -1,21 +1,22 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+import {Route,Routes,useNavigate} from "react-router-dom"
 import { DarkModeProvider } from '../components/DarkModeContext'
-import Profile from '../dashpages/Profile'
-import MyAgent from '../dashpages/MyAgent'
-import Favorite from '../dashpages/Wishlist'
-import Wishlist from '../dashpages/Wishlist'
+import { dashItem } from '../components/export'
 
 
 const UserDashboard = () => {
-  
   return (
    <DarkModeProvider>
-   {/* <Profile/> */}
-  {/* <MyAgent/> */}
-  {/* <Sidebar/> */}
-  <Wishlist/>
+<div className='flex  gap-10'>
+      <Sidebar />  
+       <Routes>
+        {dashItem.map((route,index) => (
+          <Route key={index} path={route.path} Component={route.component} />
+        ))}
+      </Routes> 
+    </div>
+
    </DarkModeProvider>
   )
 }
