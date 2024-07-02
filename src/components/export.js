@@ -14,6 +14,14 @@ import { MdNoteAlt } from "react-icons/md";
 import { FaHome, FaSearch, FaNotesMedical, FaCameraRetro, FaMoon, FaSun, FaHeart, FaMoneyBill, FaUser } from "react-icons/fa";
 import { GoLaw } from "react-icons/go";
 import { FaHouseChimney, FaPerson } from "react-icons/fa6";
+import MyAgent from "../dashpages/MyAgent";
+import Wishlist from "../dashpages/Wishlist";
+import Profile from "../dashpages/Profile";
+import AboutUs from "../container/AboutUs";
+import Home from "../pages/Home";
+import BAA from "../container/BAA";
+import Login from "../container/Login";
+import ContactUs from "../container/ContactUs";
 export const property = [
   {
     images: prop1,
@@ -168,43 +176,52 @@ export const agent = [
 ];
 
 export const navItem = [
-  {
-    link: 'Home', path:'home'
-  },
+  // {
+  //   link: 'Home', path:'/',component:Home
+  // },
   
   {
-    link: 'About', path:'about'
+    link: 'About', path:'about',component:AboutUs
   },
   {
-    link: 'Properties', path:'propeties'
+    link: 'Contact Us', path:'contact',component:ContactUs
   },
   {
-    link: 'Services', path:'services'
+    link: 'Book an Appointment', path:'bookaa',component:BAA
   },
   {
-    link: 'Agents', path:'agents'
+    link: 'Login', path:'login',component:Login
   },
-  {
-    link: 'Contact', path:'contact'
-  }
 ]
 
 export const dashItem = [
   {
-    link: 'Profile', path:'/profile',icon:FaUser
+    link: 'Profile', path:'profile',icon:FaUser,component:Profile
   },
   {
-    link: 'My Properties', path:'/prop',icon:FaHouseChimney
+    link: 'Wishlist', path:'wish',icon:FaHeart,component:Wishlist
+  },
+  {
+    link: 'My Agents', path:'myagent',icon:FaPerson,component: MyAgent
+  },
+]
+
+export const profItem = [
+  {
+    edit:"Full Name",type:"text"
+  },
+  {
+  edit:"Date of Birth", type:"date"
   },
   
   {
-    link: 'Favorite', path:'/fav',icon:FaHeart
+   edit:"Country/Region", type:"text"
   },
   {
-    link: 'Purchase History', path:'/purchase',icon:FaMoneyBill
+    edit:"Adress", type:"text"
   },
   
   {
-    link: 'My Agents', path:'/my_agents',icon:FaPerson
+    edit: 'Password',type:"password"
   },
 ]

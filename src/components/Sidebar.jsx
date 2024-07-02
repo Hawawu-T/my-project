@@ -1,48 +1,70 @@
-import { useState } from "react";
-import client1 from "../assets/images/images/client1.png";
-import { DarkModeProvider, useDarkMode } from "./DarkModeContext";
-import { dashItem } from "./export";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useDarkMode} from '../components/DarkModeContext'
+import {dashItem} from "./export.js"
+import { FaUser } from "react-icons/fa";
 
 const Sidebar = () => {
-    const { darkMode, toggleDarkMode } = useDarkMode();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  }
-  const closedMenu = () => {
-    setIsMenuOpen(false);
-  }
-
-    return (
-        
-            <div className={`${darkMode ? 'dark bg-black' : 'light bg-slate-300 fixed  p-4 top-0 left-0 h-screen w-64 shadow-md' } `}>
-          <div className="flex  items-center justify-center">
-            <img src={client1} width={100} />
-          </div>
-          <ul className="list-none my-7">
-           {
-            dashItem.map((item,index)=>(
-                <li className="py-2 hover:border-b hover:shadow-sm my-10  cursor-pointer">
-            <div className="flex items-center justify-between ">
-            <a href={item.path} key={index} className="text-red-500 dark:bg-white">
-                {item.link}
-              </a>
-              
-                <item.icon className= "size-4 text-red-500 dark:bg-white"  />
-
+  const [showside, setShowside] = useState(false);
+  const { darkMode, toggleDarkMode } = useDarkMode();
+  return (
+    <div className={`${darkMode ?'dark  bg-black' :'bg-white'}`}>
+        <div className="lg:hidden">
+          {/* Mobile menu button */}
+          <button
+            className="flex items-center px-3 py-2 border rounded dark:hover:text-white dark:hover:border-white hover:border-black"
+            onClick={() => setShowside(!showside)}
+          >
+            <svg
+              className="w-4 h-4 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 100 2h12a1 1 0 100-2H3a1 1 0 000 0zM4 15a1 1 0 100 2h12a1 1 0 100-2H4z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          
+          {showside && (
+            <div className="lg:w-1/3 xl:w-1/4 p-4 bg-gray-100 h-screen fixed top-0 left-0 lg:relative lg:top-auto lg:left-auto transition duration-300 ease-in-out">
+              <ul className="flex flex-col gap-4 my-8 text-xl font-bold ">
+              {
+                dashItem.map((element,index)=>(
+            <li key={index}>
+                  <Link
+                    to={element.path} 
+                    className="block py-2 px-4 text-sm hover:bg-gray-700 rounded"
+                  >
+                    {element.link}
+                  </Link>
+                </li>
+          ))
+              }
+              </ul>
             </div>
-            </li>     
-            ))
-           }
-          </ul>
-          {/* <div className="bg-white p-4 rounded shadow-md">
-          <h3 className="text-lg font-bold mb-2">My Agent</h3>
-          <p className="text-gray-600">John Doe</p>
-          <p className="text-gray-600">johndoe@example.com</p>
-        </div> */}
+          )}
+        </div>
+        
+        <ul className="hidden lg:flex flex-col justify-end items-start  gap-2 my-8 text-xl font-bold">
+         {
+          dashItem.map((element,index)=>(
+            <li key={index}>
+                  <Link
+                    to={element.path}
+                    className="block py-2 px-4 text-sm hover:bg-red-500 rounded"
+                  >
+                    {element.link}
+                  </Link>
+                </li>
+          ))
+         }
+          
+        </ul>
+       
       </div>
-  );
-};
-
+    
+)};
 export default Sidebar;
