@@ -27,7 +27,7 @@ const Sidebar = () => {
           </button>
           
           {showside && (
-            <div className="lg:w-1/3 xl:w-1/4 p-4 bg-gray-100 h-screen fixed top-0 left-0 lg:relative lg:top-auto lg:left-auto transition duration-300 ease-in-out">
+            <div className="lg:w-1/3 xl:w-1/4 p-4  bg-gray-100 h-screen  fixed top-0 left-0 lg:relative lg:top-auto lg:left-auto transition duration-300 ease-in-out">
               <ul className="flex flex-col gap-4 my-8 text-xl font-bold ">
               {
                 dashItem.map((element,index)=>(
@@ -46,13 +46,15 @@ const Sidebar = () => {
           )}
         </div>
         
-        <ul className="hidden lg:flex flex-col justify-end items-start  gap-2 my-8 text-xl font-bold">
+      
+     <div className="my-16">
+     <ul className="hidden lg:flex flex-col w-full h-screen dark:text-slate-300  px-20 items-center justify-start gap-4 text-xl font-bold text-nowrap">
          {
           dashItem.map((element,index)=>(
             <li key={index}>
                   <Link
                     to={element.path}
-                    className="block py-2 px-4 text-sm hover:bg-red-500 rounded"
+                    className="block py-2 px-8 text-sm  hover:bg-red-500 rounded"
                   >
                     {element.link}
                   </Link>
@@ -61,8 +63,10 @@ const Sidebar = () => {
          }
           
         </ul>
+    
        
       </div>
+     </div>
     
 )};
 export default Sidebar;
