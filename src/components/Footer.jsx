@@ -13,7 +13,7 @@ const Footer = () => {
   
   return (
     <div>
-    <footer className={`${darkMode ? 'dark bg-black' : 'light bg-gray-800'} w-full m-auto lg:px-20 px-10 py-20 grid lg:grid-cols-3 grid-cols-1 justify-center`}>
+    <footer className={`${darkMode ? 'dark bg-black' : 'light bg-gray-800'} w-full mt-96 lg:px-20 px-10 py-20 grid lg:grid-cols-3 grid-cols-1 justify-center`}>
       <div className='flex flex-col justify-center items-start gap-5'>
         <h1 className='text-white text-2xl font-semibold'>About Us</h1>
         <p className='text-slate-200 text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> 

@@ -22,7 +22,7 @@ const MyAgent = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
   return (
         <div className={`${darkMode ? 'dark bg-black' : 'light bg-transparent'}`}>
-        <section id='agent' className='lg:w-[95%] w-full h-fit m-auto bg-coverbg-center rounded-xl flex justify-center flex-col items-start lg:px-20 px-6 py-20 gao-20'>
+        <section id='agent' className='lg:w-[100%] w-full h-fit m-auto bg-coverbg-center rounded-xl flex justify-center flex-col items-start lg:px-20 px-6 py-20 gao-20'>
             <h1 data-aos='zoom-in' className=' self-center uppercase text-2xl my-7 text-red-500 dark:bg-white'>MY AGENTS</h1>
             
 
@@ -53,4 +53,4 @@ const MyAgent = () => {
   )
 }
 
-export default MyAgent
+export default MyAgent;

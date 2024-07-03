@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const BAA = () => {
   return (
@@ -80,12 +81,11 @@ const BAA = () => {
           ></textarea>
         </div>
         <div className="text-center">
-          <a
-            href="./appointmentsuccessful"
+          <Link to="/bookaft"
             className="block w-full px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-500 focus:outline-none focus:bg-red-600"
           >
             Submit
-          </a>
+          </Link>
         </div>
       </form>
     </div>

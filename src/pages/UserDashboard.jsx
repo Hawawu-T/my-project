@@ -1,20 +1,21 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
-import {Route,Routes,useNavigate} from "react-router-dom"
-import { DarkModeProvider } from '../components/DarkModeContext'
+import {Route,Routes,} from "react-router-dom"
 import { dashItem } from '../components/export'
 
 
 const UserDashboard = () => {
   return (
    
-<div className='w-full my-12 flex gap-4'>
+<div className='w-full h-screen my-12 flex gap-4 '>
       <Sidebar />  
-       <Routes>
+     <div className="w-full h-screen">
+     <Routes>
         {dashItem.map((route,index) => (
           <Route key={index} path={route.path} Component={route.component} />
         ))}
       </Routes> 
+     </div>
     </div>
   )
 }

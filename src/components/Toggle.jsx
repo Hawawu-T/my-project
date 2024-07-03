@@ -1,8 +1,6 @@
 import React from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { useDarkMode } from './DarkModeContext';
-import { Link } from 'react-router-dom';
-
 const Toggle = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
   return (

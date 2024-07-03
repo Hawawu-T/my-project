@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
   return (
@@ -39,12 +40,12 @@ const ContactUs = () => {
             ></textarea>
           </div>
           <div className="text-center">
-            <a href='./submitcont' button
+            <Link to='/contactaft' button
               type="submit"
               className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
             >
               Submit
-            </a>
+            </Link>
           </div>
             </form>
         </div>
